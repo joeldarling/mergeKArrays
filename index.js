@@ -6,7 +6,7 @@ const minHeap = new Heap(null, null, (a, b) => {
 });
 
 function mergeKArrays(...inputArrays) {
-  if(inputArrays.some(item => Array.isArray(item))) {
+  if(!inputArrays.every(item => Array.isArray(item))) {
     throw new Error('Arguments must be only arrays')
   }
   const result = []; // this stores final result
@@ -43,4 +43,4 @@ const arr3 = [];
 const arr4 = [2, 123, 200];
 
 // print result
-console.log(mergeKArrays(arr1, arr2, arr3, arr4))
+console.log(mergeKArrays('joe'))
