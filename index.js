@@ -1,14 +1,13 @@
 const Heap = require("collections/heap");
 
-// create min heap
-const minHeap = new Heap(null, null, (a, b) => {
-  return b.val - a.val;
-});
-
 function mergeKArrays(...inputArrays) {
   if(!inputArrays.every(item => Array.isArray(item))) {
     throw new Error('Arguments must be only arrays')
   }
+  // create min heap
+  const minHeap = new Heap(null, null, (a, b) => {
+    return b.val - a.val;
+  });
   const result = []; // this stores final result
   const arrCurrIdx = new Array(inputArrays.length).fill(0); // keep track of position for each array
   const totalSize = inputArrays.reduce((prev, curr) => prev + curr.length, 0); // sum lengths of all input arrays
