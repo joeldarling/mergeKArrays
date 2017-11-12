@@ -2,7 +2,7 @@ const Heap = require("collections/heap");
 
 function mergeKArrays(...inputArrays) {
   if(!inputArrays.every(item => Array.isArray(item))) {
-    throw new Error('Arguments must be only arrays')
+    throw new Error('Arguments must be only arrays');
   }
   // create min heap
   const minHeap = new Heap(null, null, (a, b) => {
@@ -28,7 +28,7 @@ function mergeKArrays(...inputArrays) {
 
     // only add next element in array if exists
     if(arrCurrIdx[idx] < currArray.length) {
-      minHeap.add({val: currArray[arrCurrIdx[idx]], idx})
+      minHeap.add({val: currArray[arrCurrIdx[idx]], idx});
     }
   }
 
@@ -42,4 +42,4 @@ const arr3 = [];
 const arr4 = [2, 123, 200];
 
 // print result
-console.log(mergeKArrays('joe'))
+console.log(mergeKArrays(arr1, arr2, arr3, arr4));
